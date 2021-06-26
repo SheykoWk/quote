@@ -1,38 +1,436 @@
-.App {
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  font-family: "Black Ops One", cursive;
+}
+.container{
+  max-width: 800px;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  min-width: 300px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.quote-machine{
+  margin: auto;
+  padding: 2px;
+  width: 700px;
+  -webkit-animation: Glitch 10s ease-in-out infinite;
+  -moz-animation: Glitch 10s ease-in-out infinite;
+  animation: Glitch 10s ease-in-out infinite;
+}
+
+h1{
+  font-size: 1.2rem;
+  margin: 10px;
+}
+h2{
+  font-size: 1.9rem;
+  margin: 10px;
+}
+.author{
+  transition: all 1s ease;
+  color: #d9f2f4;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.author::after{
+  content: ' ]';
+}
+.author::before{
+  content: '[ ';
+}
+.author:hover{
+  background-color: #d9f2f4;
+  color: #000;
+}
+a{
+  text-decoration: none;
+  transition: all 1s ease;
+  color: #d9f2f4;
+}
+a.brackets{
+  padding-bottom: 2px;
+}
+a.brackets::before{
+  content: '[';
+}
+a.brackets::after{
+  content:']';
+}
+a:hover,
+a:active,
+a:focus{
+  background-color: #d9f2f4;
+  color: #000;
+}
+.quote-machine__header{
+  margin-bottom: 2px;
+  min-height: 50px;
+  position:relative;
+}
+.quote-machine__header .version{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+main{
+  margin-bottom: 2px;
+  padding: 5px;
+  position: relative;
+  min-height: 300px;
+}
+main .blockquote{
+  position: relative;
+  min-height: 130px;
+  margin: 10px;
+}
+main .buttons{
+  position: absolute;
+  bottom: 15px;
+}
+.footer-author{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quote-button{
+  padding: 5px;
+  margin: 5px;
+  color: #000;
+  background-color: #93edf5;
+  text-transform: uppercase;
+  text-shadow: none;
+  font-weight: bold;
+  border: 2px solid #93edf5;
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(16, 81, 139, 0.78);
+  -moz-box-shadow: 0px 0px 4px 2px rgba(16, 81, 139, 0.78);
+  box-shadow: 0px 0px 4px 2px rgba(16, 81, 139, 0.78);
+}
+.quote-button:hover{
+  background:transparent;
+  color: #93edf5;
+  text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.83);
+}
+.quote-button i{
+  color: #000;
+}
+body{
+  font-size: 1rem;
+  color: #93edf5;
+  text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.83);;
+  background-color: #051d29;
+  -webkit-animation: ScanLine 10s ease-in-out infinite;
+  -moz-animation: ScanLine 10s ease-in-out infinite;
+  animation: ScanLine 10s ease-in-out infinite;
+}
+.quote-machine,
+.quote-machine__header,
+.quote-machine__footer,
+.version{
+  border: 2px solid #4ba0e3;
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(16, 81, 139, 0.78), inset 0px 0px 4px 2px rgba(16, 81, 139, 0.78);
+  -moz-box-shadow: 0px 0px 4px 2px rgba(16, 81, 139, 0.78), inset 0px 0px 4px 2px rgba(16, 81, 139, 0.78);
+  box-shadow: 0px 0px 4px 2px rgba(16, 81, 139, 0.78), inset 0px 0px 4px 2px rgba(16, 81, 139, 0.78);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@-webkit-keyframes Glitch {
+  9.9% {
+    -webkit-transform: skew(0deg);
+  }
+  10% {
+    -webkit-transform: skew(1deg);
+  }
+  10.1% {
+    -webkit-transform: skew(0deg);
+  }
+  89.9% {
+    -webkit-transform: skew(0deg);
+  }
+  90% {
+    -webkit-transform: skew(-4deg);
+  }
+  90.1% {
+    -webkit-transform: skew(0deg);
+  }
+}
+@-moz-keyframes Glitch {
+  9.9% {
+    -webkit-transform: skew(0deg);
+  }
+  10% {
+    -webkit-transform: skew(1deg);
+  }
+  10.1% {
+    -webkit-transform: skew(0deg);
+  }
+  89.9% {
+    -webkit-transform: skew(0deg);
+  }
+  90% {
+    -webkit-transform: skew(-4deg);
+  }
+  90.1% {
+    -webkit-transform: skew(0deg);
+  }
+}
+@keyframes Glitch {
+  9.9% {
+    -webkit-transform: skew(0deg);
+  }
+  10% {
+    -webkit-transform: skew(1deg);
+  }
+  10.1% {
+    -webkit-transform: skew(0deg);
+  }
+  89.9% {
+    -webkit-transform: skew(0deg);
+  }
+  90% {
+    -webkit-transform: skew(-4deg);
+  }
+  90.1% {
+    -webkit-transform: skew(0deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@-webkit-keyframes ScanLine{
+  0%{
+    opacity: 0.8;
   }
-  to {
-    transform: rotate(360deg);
+  10%{
+    opacity: 0.5;
+  }
+  20%{
+    opacity: 0.9;
+  }
+  30%{
+    opacity: 0.7;
+  }
+  40%{
+    opacity: 0.9;
+  }
+  50%{
+    opacity: 1;
+  }
+  60%{
+    opacity: 0.9;
+  }
+  70%{
+    opacity: 0.6;
+  }
+  80%{
+    opacity: 0.9;
+  }
+  90%{
+    opacity: 0.8;
+  }
+  100%{
+    opacity: 0.9;
+  }
+}
+@-moz-keyframes ScanLine{
+  0% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+@keyframes ScanLine{
+  0% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+@media (min-width: 769){
+  h1{
+    font-size: 1.6rem;
+  }
+  body{
+    background: #051d29 url('https://markostefanovic.github.io/random-quote-generator/images/back.png') repeat 300% 300%;
+    -webkit-animation: ScanLine 10s ease-in-out infinite;
+    -moz-animation: ScanLine 10s ease-in-out infinite;
+    animation: ScanLine 10s ease-in-out infinite;
+  }
+  .quote-machine{
+    width: 600px;
+  }
+  @-webkit-keyframes ScanLine{
+    0%{
+      background-position: 51% 0%;
+      opacity: 0.9;
+    }
+    10%{
+      opacity: 0.8;
+    }
+    20%{
+      opacity: 0.7;
+    }
+    30%{
+      opacity: 0.8;
+    }
+    40%{
+      opacity: 0.9;
+    }
+    50%{
+      background-position: 50% 100%;
+      opacity: 1;
+    }
+    60%{
+      opacity: 0.9;
+    }
+    70%{
+      opacity: 0.6;
+    }
+    80%{
+      opacity: 0.9;
+    }
+    90%{
+      opacity: 0.8;
+    }
+    100%{
+      opacity: 0.9;
+      background-position: 51% 0%;
+    }
+  }
+  @-moz-keyframes ScanLine{
+    0% {
+      background-position: 51% 0%;
+      opacity: 0.9;
+    }
+    10% {
+      opacity: 0.8;
+    }
+    20% {
+      opacity: 0.7;
+    }
+    30% {
+      opacity: 0.8;
+    }
+    40% {
+      opacity: 0.9;
+    }
+    50% {
+      background-position: 50% 100%;
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.9;
+    }
+    70% {
+      opacity: 0.6;
+    }
+    80% {
+      opacity: 0.9;
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      background-position: 51% 0%;
+      opacity: 0.9;
+    }
+  }
+  @keyframes ScanLine{
+    0% {
+      background-position: 51% 0%;
+      opacity: 0.9;
+    }
+    10% {
+      opacity: 0.8;
+    }
+    20% {
+      opacity: 0.7;
+    }
+    30% {
+      opacity: 0.8;
+    }
+    40% {
+      opacity: 0.9;
+    }
+    50% {
+      background-position: 50% 100%;
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.9;
+    }
+    70% {
+      opacity: 0.6;
+    }
+    80% {
+      opacity: 0.9;
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      background-position: 51% 0%;
+      opacity: 0.9;
+    }
+  }
+}
+@media(max-width: 767px) and (orientation: landscape){
+  main{
+    min-height: 170px;
   }
 }
