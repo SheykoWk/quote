@@ -4,7 +4,7 @@ const FooterQuote = () => {
             <p className='footer-author'>
                 Coded and designed by
                 <br/>
-                <a href='https://google.com' rel='noreferrer' className='brackets' target='_blank'>Sh3yk0 Wk</a>
+                <a href='https://github.com/SheykoWk/quote' rel='noreferrer' className='brackets' target='_blank'>Sh3yk0 Wk</a>
                 <br/>
                 © 2021
             </p>
